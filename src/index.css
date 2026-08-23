@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+html.dark body {
+  @apply bg-charcoal text-[#E7E4DC];
+}
+
+::selection {
+  background: #ae322633;
+}
+
+/* Focus visibility — accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #ae3226;
+  outline-offset: 2px;
+}
+
+/* Ticker marquee for the signature "wire" element */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker-scroll 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+.desk-stamp {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #b7b0a0;
+  border-radius: 3px;
+}
+html.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #363c4a;
+}
