@@ -245,21 +245,22 @@ export const Landing = () => {
             </div>
           </div>
 
-          {/* Random Video Placeholder */}
-          <div className="relative rounded-2xl overflow-hidden border border-ink/15 dark:border-charcoal-border shadow-xl bg-black aspect-video flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/40 to-transparent flex flex-col items-center justify-center p-6 text-center text-white">
-              <div className="w-16 h-16 rounded-full bg-wire/90 flex items-center justify-center mb-4 shadow-lg hover:scale-105 transition cursor-pointer">
-                <ArrowRight size={24} className="text-white ml-0.5" />
-              </div>
-              <h4 className="font-display text-xl mb-1">Watch Platform Walkthrough</h4>
-              <p className="text-xs text-gray-300 max-w-sm">
-                (Video placeholder: Replace this component with your actual recorded tutorial video file when ready)
-              </p>
-            </div>
-          </div>
+          {/* Video Player */}
+          {/* Video Player */}
+<div className="relative rounded-2xl overflow-hidden border border-ink/15 dark:border-charcoal-border shadow-xl bg-black">
+  <video
+    controls
+    className="w-full h-auto block"
+    poster="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop"
+  >
+    <source src="/demo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
         </div>
       </section>
-{/* Security & Browser Storage Note with Web Image Background */}
+
+      {/* Security & Browser Storage Note with Web Image Background */}
       <section 
         className="relative px-6 py-16 border-b border-ink/10 dark:border-charcoal-border overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
@@ -278,6 +279,7 @@ export const Landing = () => {
           </div>
         </div>
       </section>
+
       {/* Modules Grid with Top Hover Line Effect */}
       <section id="modules" className="px-6 py-20 md:px-10 border-b border-ink/10 dark:border-charcoal-border bg-paper dark:bg-charcoal">
         <div className="mx-auto max-w-6xl">
@@ -305,8 +307,7 @@ export const Landing = () => {
         </div>
       </section>
 
-     
-{/* Final Call to Action Banner (Red-Brown Gradient) */}
+      {/* Final Call to Action Banner (Red-Brown Gradient) */}
       <section className="px-6 py-20 md:px-10 bg-gradient-to-r from-[#991b1b] via-[#7c2d12] to-[#451a03] text-center text-white shadow-2xl">
         <div className="mx-auto max-w-3xl">
           <p className="desk-stamp mb-3 text-xs uppercase tracking-widest text-amber-200">
@@ -326,6 +327,7 @@ export const Landing = () => {
           </Link>
         </div>
       </section>
+
       {/* Testimonials Section */}
       <section className="px-6 py-20 md:px-10 border-b border-ink/10 dark:border-charcoal-border bg-paper dark:bg-charcoal">
         <div className="mx-auto max-w-5xl">
@@ -388,8 +390,6 @@ export const Landing = () => {
           </div>
         </div>
       </section>
-
-      
 
       {/* Footer */}
       <footer className="border-t border-ink/10 px-6 py-10 text-sm text-ink-faint dark:border-charcoal-border dark:text-[#6E7688] md:px-10 bg-paper dark:bg-charcoal">

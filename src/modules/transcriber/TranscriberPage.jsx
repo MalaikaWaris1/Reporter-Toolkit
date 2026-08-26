@@ -131,24 +131,28 @@ import { CopyButton } from "../../components/CopyButton.jsx";
 import { SaveButton } from "../../components/SaveButton.jsx";
 import { FileUploader } from "../../components/FileUploader.jsx";
 import { EmptyState } from "../../components/EmptyState.jsx";
+import HowToUse from "../../components/HowToUse.jsx";
+
+
+// Apne page ke end par:
 
 // idle -> uploading -> processing -> completed / error
 export const TranscriberPage = () => {
   const { sendTo } = useWorkflow();
-  
+
   const [file, setFile] = useState(null);
-  
+
   const [language, setLanguage] = useState(() => {
     return sessionStorage.getItem("transcriber_saved_lang") || "ur";
   });
-  
+
   const [state, setState] = useState(() => {
     return sessionStorage.getItem("transcriber_saved_state") || "idle";
   });
-  
+
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState("");
-  
+
   const [text, setText] = useState(() => {
     return sessionStorage.getItem("transcriber_saved_text") || "";
   });
@@ -283,6 +287,30 @@ export const TranscriberPage = () => {
       {state === "idle" && !text && (
         <EmptyState icon={Mic2} title="No recording yet" description="Drop an audio file to begin." />
       )}
+     <div className="mt-12">
+        <HowToUse toolName="transcriber" />
+      </div>    
+      <div className="max-w-[1400px] mx-auto mt-24 mb-16 px-4 md:px-8">
+        <div className="bg-gradient-to-br from-[#ea580c] to-[#dc2626] rounded-[24px] px-8 py-10 md:px-16 md:py-12 flex flex-col md:flex-row gap-8 md:gap-16 items-center shadow-xl">
+
+          {/* Left Side: Bold Heading */}
+          <div className="w-full md:w-4/12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight">
+              Completely free to use
+            </h2>
+          </div>
+
+          {/* Right Side: Professional English Description */}
+          <div className="w-full md:w-8/12">
+            <p className="text-white/95 text-base md:text-lg leading-relaxed font-medium">
+              Experience the full power of Reporter Toolkit without any restrictions. All our AI-driven tools are <strong>100% free to use</strong> for your newsroom workflows. Generate unlimited summaries, accurate wire translations, and SEO-friendly headlines—no API limits, no daily caps.
+            </p>
+          </div>
+
+        </div>
+      </div>
     </div>
+    
   );
+  
 };

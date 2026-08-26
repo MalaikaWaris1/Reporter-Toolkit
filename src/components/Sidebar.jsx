@@ -108,7 +108,7 @@ export const Sidebar = ({ open, onClose }) => {
         />
       )}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r border-ink/15 bg-[#F3EFE6] px-3 py-4 transition-transform dark:border-charcoal-border dark:bg-[#0D1117] md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r border-ink/15 bg-[#F3EFE6] px-3 py-4 transition-transform dark:border-charcoal-border dark:bg-[#0D1117] md:sticky md:top-0 md:h-screen md:shrink-0 md:translate-x-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -131,7 +131,7 @@ export const Sidebar = ({ open, onClose }) => {
           <NavGroup label="Account" items={ACCOUNT} onNavigate={onClose} />
         </nav>
 
-        {/* Footer: Always shows user profile/initials when logged in, instead of the text link */}
+        {/* Footer */}
         <div className="border-t border-ink/10 pt-3 dark:border-charcoal-border">
           {user ? (
             <div className="flex items-center justify-between px-2 py-1">
