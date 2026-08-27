@@ -1,7 +1,12 @@
 import axios from "axios";
 
 // Base URL configuration
-const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+// Base URL configuration
+const baseURL = 
+  import.meta.env.VITE_API_BASE_URL || 
+  (import.meta.env.MODE === "production"
+    ? "https://newsbackend-iokm.onrender.com"
+    : "http://localhost:8000");
 
 export const apiClient = axios.create({
   baseURL,
